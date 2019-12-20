@@ -1,5 +1,5 @@
 let displayArray = [];
-let currentNum = 0;
+let currentNum = '';
 let lastValue;
 
 const display = document.querySelector("#screen-display");
@@ -40,11 +40,11 @@ displayButtons.forEach(button => {
     } else if (lastValue === "0" && !isNaN(e.target.value)) {
       return;
     } else {
-      currentNum += Number(e.target.value);
+      currentNum += e.target.value;
       if (isNaN(lastValue)) {
         displayArray.push(Number(e.target.value));
       } else {
-        displayArray.splice(-1, 1, currentNum);
+        displayArray.splice(-1, 1, Number(currentNum));
       }
     }
     screenDisplay();
