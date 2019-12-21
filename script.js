@@ -61,6 +61,7 @@ const calculate = () => {
 
     screenDisplay();
     lastValue = displayArray[displayArray.length - 1];
+    currentNum = '';
 };
 
 displayButtons.forEach(button => {
