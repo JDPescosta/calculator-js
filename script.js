@@ -51,7 +51,7 @@ const calculate = () => {
     }
 
     
-    if(displayArray[displayArray.length - 1] === Infinity){
+    if(displayArray[displayArray.length - 1] === Infinity || displayArray[displayArray.length - 1] === -Infinity){
         displayArray[0] = 'Listen here you little shit'
         screenDisplay();
         displayArray = []
