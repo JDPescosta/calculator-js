@@ -32,7 +32,7 @@ const screenDisplay = () => {
 };
 
 const clear = () => {
-    displayArray = [];
+    displayArray = [''];
     currentNum = '';
     lastValue = undefined;
     screenDisplay();
