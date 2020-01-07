@@ -5,7 +5,12 @@ let lastValue;
 const display = document.querySelector("#screen-display");
 const displayButtons = document.querySelectorAll(".display");
 const equalsButton = document.querySelector("#equals-button");
-const clearButton = document.querySelector('#clear-button')
+const clearButton = document.querySelector('#clear-button');
+const popupMeme = document.querySelector('#meme-modal');
+const closeModalButton = document.querySelector('.close-modal'); 
+
+
+popupMeme.style.display = 'none';
 
 const add = (x, y) => x + y;
 const subtract = (x, y) => x - y;
@@ -52,9 +57,9 @@ const calculate = () => {
 
     
     if(displayArray[displayArray.length - 1] === Infinity || displayArray[displayArray.length - 1] === -Infinity){
-        displayArray[0] = 'Listen here you little shit'
-        screenDisplay();
         displayArray = []
+        screenDisplay();
+        popupMeme.style.display = "block";
         return;
     }
 
@@ -85,6 +90,17 @@ displayButtons.forEach(button => {
     lastValue = displayArray[displayArray.length - 1];
   });
 });
+
+
+closeModalButton.onclick = function() {
+  popupMeme.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == popupMeme) {
+    popupMeme.style.display = "none";
+  }
+}
 
 equalsButton.addEventListener('click', () => calculate());
 
